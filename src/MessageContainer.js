@@ -8,10 +8,10 @@ import md5 from 'md5';
 import LoadEarlier from './LoadEarlier';
 import Message from './Message';
 
-const transform = []
-  /*Platform.OS === 'android'
+const transform = 
+  Platform.OS === 'android'
     ? [{ scaleY: -1 }, { perspective: 1280 }]
-    : [{ scaleY: -1 }];*/
+    : [{ scaleY: -1 }];
 
 export default class MessageContainer extends React.Component {
   constructor(props) {
@@ -125,7 +125,7 @@ export default class MessageContainer extends React.Component {
         {...this.props.listViewProps}
         data={this.props.messages}
         keyExtractor={(item, index) => item._id}
-        inverted={true}
+        inverted={false}
         style={[
           this.props.style,
           {
